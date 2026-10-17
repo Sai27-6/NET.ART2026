@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+}
+
+.screen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #eee4ff;
+    transition: background-color 2s ease;
+}
+
+p {
+    text-align: center;
+    font-family: Georgia, serif;
+    padding: 20px;
+    margin: 0;
+}
+
+.square {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid red;
+}
+
+.position-one      { left: 7%;  top: 18%; }
+.position-two      { left: 31%; top: 29%; }
+.position-three    { left: 52%; top: 15%; }
+.position-four     { left: 73%; top: 24%; }
+.position-five     { left: 87%; top: 43%; }
+
+.position-six      { left: 16%; top: 46%; }
+.position-seven    { left: 40%; top: 53%; }
+.position-eight    { left: 63%; top: 39%; }
+.position-nine     { left: 77%; top: 66%; }
+.position-ten      { left: 5%;  top: 73%; }
+
+.position-eleven   { left: 27%; top: 79%; }
+.position-twelve   { left: 49%; top: 72%; }
+.position-thirteen { left: 66%; top: 84%; }
+.position-fourteen { left: 86%; top: 82%; }
+.position-fifteen  { left: 35%; top: 12%; }
+
+.screen:hover {
+    animation: backgroundchange 12s linear infinite;
+}
+
+.screen:hover .square{
+    animation: shapechange 8s linear infinite;
+}
+
+.screen:hover .triangle {
+    animation: trianglechange 8s linear infinite;
+}
+
+@keyframes backgroundchange {
+    0%   { background-color: #d3c3ef; }
+    25%  { background-color: #f0a6c0; }
+    50%  { background-color: #d8efff; }
+    75%  { background-color: #e0f5df; }
+    100% { background-color: #eee4ff; }
+}
+
+@keyframes shapechange {
+    0% {
+        background-color: red;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(30px, -25px) rotate(90deg);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(-20px, 30px) rotate(180deg);
+    }
+    75% {
+        background-color: green;
+        transform: translate(-30px, -15px) rotate(270deg);
+    }
+    100% {
+        background-color: red;
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes trianglechange {
+    0% {
+        border-bottom-color: red;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        border-bottom-color: yellow;
+        transform: translate(-25px, 20px) rotate(90deg);
+    }
+    50% {
+        border-bottom-color: blue;
+        transform: translate(25px, -30px) rotate(180deg);
+    }
+    75% {
+        border-bottom-color: green;
+        transform: translate(30px, 15px) rotate(270deg);
+    }
+    100% {
+        border-bottom-color: red;
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
